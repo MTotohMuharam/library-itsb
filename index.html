@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Institut Teknologi Sains Bandung</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome untuk ikon yang presisi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- TOP BAR (Ciri khas web universitas) -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-left">
+                <span><i class="fa-solid fa-clock"></i> Sen - Jum: 08.00 - 17.00 </span>
+            </div>
+            <div class="top-right">
+                <a href="#">Repository</a>
+                <a href="#">E-Journal</a>
+                <a href="#">E-Book</a>
+                <a href="#">Kontak</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header>
+        <div class="navbar container">
+            <div class="logo">
+                <!-- Struktur dua baris text di sebelah logo seperti aslinya -->
+                <img src="New Logo ITSB.png" alt="Logo ITSB" class="logo-img">
+                <div class="logo-text">
+                    <span class="brand-title">PERPUSTAKAAN</span>
+                    <span class="brand-sub">Institut Teknologi Sains Bandung</span>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Layanan</a></li>
+                    <li><a href="#">Koleksi</a></li>
+                    <li><a href="#">Fasilitas</a></li>
+                    <li><a href="#">Unduhan</a></li>
+                    <li><a href="#" class="btn-sso"><i class="fa-solid fa-user-lock"></i> Login SSO</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobileMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SEARCH SECTION -->
+    <!-- HERO SECTION DENGAN BACKGROUND SLIDESHOW OMATIS -->
+    <section class="hero-search-section">
+        <!-- Kontainer Slideshow Gambar Latar Belakang -->
+        <div class="hero-slideshow-container">
+            <!-- Slide 1 (Gambar Utama Saat Ini) -->
+            <div class="hero-slide active" style="background-image: url('Gedung\ Baru.png');"></div>
+            <!-- Slide 2 (Alternatif Gambar Perpustakaan Modern) -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=80');"></div>
+            <!-- Slide 3 (Alternatif Gambar Ruang Baca/Koleksi Buku) -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80');"></div>
+        </div>
+
+        <!-- Overlay Gelap Terpadu (Mengunci kontras teks agar tetap tajam) -->
+        <div class="hero-background-overlay"></div>
+        
+        <!-- Konten Pencarian di Bagian Depan (Sesuai dengan file edited-image.jpg) -->
+        <div class="container hero-search-container">
+            <p class="hero-subtitle">Selamat Datang di Perpustakaan ITSB</p>
+            <h1 style="color: #ffffff; margin-bottom: 30px; font-size: 2.5rem; font-weight: 700;">Mulai Pencarian Literatur Anda</h1>
+            
+            <div class="search-engine-box">
+                <div class="search-categories-tabs">
+                    <button class="search-tab-btn active" onclick="switchSearchTab(event, 'katalog')">Katalog Buku</button>
+                    <button class="search-tab-btn" onclick="switchSearchTab(event, 'artikel')">Artikel/Jurnal</button>
+                    <button class="search-tab-btn" onclick="switchSearchTab(event, 'repository')">Tugas Akhir/Skripsi</button>
+                </div>
+
+                <form class="search-input-form" onsubmit="executeSearch(event)">
+                    <div class="search-input-group">
+                        <i class="fa-solid fa-magnifying-glass search-field-icon"></i>
+                        <input type="text" id="mainSearchInput" placeholder="Ketik judul buku, subjek, atau nama penulis di sini...">
+                    </div>
+                    <button type="submit" class="search-action-submit">Cari Koleksi</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU LAYANAN UTAMA (GRID KARTU) -->
+    <section class="main-services container">
+        <div class="section-header">
+            <h3>Akses Layanan Digital</h3>
+            <div class="line-decorator"></div>
+        </div>
+        
+        <div class="grid-container">
+            <!-- Kartu 1: OPAC -->
+            <div class="feature-card">
+                <div class="card-icon"><i class="fa-solid fa-search"></i></div>
+                <h4>OPAC (Katalog Online)</h4>
+                <p>Online Public Access Catalog (OPAC) adalah sistem katalog atau fasilitas pencarian untuk mempercepat penemuan data katalog yang dapat diakses pengguna untuk mengakses bahan perpustakaan digital dan referensi online lainnya.</p>
+                <a href="#" class="learn-more">Akses Katalog <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+
+            <!-- Kartu 2: Repository -->
+            <div class="feature-card">
+                <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h4>Repository ITSB</h4>
+                <p>Repository ITSB merupakan repositori institusi yang memiliki tujuan untuk melestarikan dan mempublikasikan karya tulis ilmiah yang dihasilkan oleh mahasiswa dan dosen ITSB serta memastikan karya tulis ilmiah tersebut dapat diakses terus dan mudah.</p>
+                <a href="#" class="learn-more">Buka Repository <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+
+            <!-- Kartu 3: E-Resources -->
+            <div class="feature-card">
+                <div class="card-icon"><i class="fa-solid fa-book-open"></i></div>
+                <h4>E-Resources</h4>
+                <p>Perpustakaan Institut Teknologi Sains Bandung (ITSB) dan Perpustakaan Nasional RI menyediakan berbagai bahan perpustakaan digital online (e-Resources) seperti jurnal, ebook, dan karya-karya referensi online lainnya.</p>
+                <a href="#" class="learn-more">Jelajahi E-Resources <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+
+            <!-- Kartu 4: Lib-Sign -->
+            <div class="feature-card">
+                <div class="card-icon"><i class="fa-solid fa-file-signature"></i></div>
+                <h4>Ai JOUIN</h4>
+                <p>Layanan berbasis kecerdasan buatan (Ai) untuk mendukung pengelolaan dan penyebaran informasi publikasi ilmiah. Sebagai pusat data terintegrasi yang mencatat, memverifikasi, menganalisis, dan menyajikan informasi terkait jurnal ilmiah yang diterbitkan oleh sivitas akademika.</p>
+                <a href="#" class="learn-more">Jelajahi Ai JOUIN <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="library-menu container">
+        <div class="menu-grid">
+            
+            <div class="menu-card">
+                <div class="menu-icon"><i class="fa-solid fa-book-open"></i></div>
+                <span class="menu-title">AKSES SKRIPSI</span>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                <span class="menu-title">CEK TURNITIN</span>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                <span class="menu-title">BEBAS PUSTAKA</span>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                <span class="menu-title">MYRESEARCHMAP</span>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-icon"><i class="fa-regular fa-lightbulb"></i></div>
+                <span class="menu-title">AKUN PREMIUM</span>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-icon"><i class="fa-regular fa-eye"></i></div>
+                <span class="menu-title">CEK PINJAMAN</span>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-icon"><i class="fa-solid fa-book-reader"></i></div>
+                <span class="menu-title">BOOKING FASILITAS</span>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <span class="menu-title">USULAN BUKU</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DATA PERPUSTAKAANs -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="stats-main-title">DATA PERPUSTAKAAN</h2>
+            
+            <div class="stats-grid-wrapper">
+                <div class="stat-box">
+                    <span class="stat-number" data-target="5127">0</span>
+                    <p class="stat-label">Koleksi Tercetak</p>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-number" data-target="1368">0</span>
+                    <p class="stat-label">Koleksi Non Cetak</p>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-number" data-target="899">0</span>
+                    <p class="stat-label">Pemustaka</p>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-number" data-target="5">0</span>
+                    <p class="stat-label">Perpustakaan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION AKSES -->
+    <section class="cta-section reference-section">
+        <div class="cta-content container">
+            <h2>Akses Referensi <span class="typing-text red-highlight" id="textProdi">Sesuai dengan Prodi</span></h2>
+            <a href="#" class="btn-cta"><i class="fa-solid fa-link"></i> KLIK DI SINI</a>
+        </div>
+    </section>
+
+    <section class="cta-section innovation-section">
+        <div class="cta-content container">
+            <h2>Kegiatan atau Inovasi <span class="typing-text yellow-highlight" id="textLibrary">Perpustakaan ITSB</span></h2>
+            <a href="#" class="btn-cta"><i class="fa-solid fa-link"></i> KLIK DI SINI</a>
+        </div>
+    </section>
+
+    <!-- E-Resources -->
+    <section class="eresources-section">
+        <div class="container eresources-container">
+            
+            <h2 class="eresources-title">E-RESOURCES</h2>
+            
+            <div class="slider-wrapper">
+                <div class="logo-track">
+                    
+                    <div class="logo-item">
+                        <img src="onepetro.png" alt="One Petro">
+                        <span>ONE PETRO</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="emeraldpublishing.png" alt="Emerald Publishing">
+                        <span>EMERALD PUBLISHING</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="sciencedirect.png" alt="Science Direct">
+                        <span>SCIENCE DIRECT</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="garuda.png" alt="Garuda">
+                        <span>GARUDA</span>
+                    </div>
+
+                    <div class="logo-item">
+                        <img src="https://via.placeholder.com/200x100/ffffff/092543?text=OnePetro" alt="One Petro">
+                        <span>ONE PETRO</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="https://via.placeholder.com/200x100/ffffff/092543?text=Emerald" alt="Emerald Publishing">
+                        <span>EMERALD PUBLISHING</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="https://via.placeholder.com/200x100/ffffff/092543?text=ScienceDirect" alt="Science Direct">
+                        <span>SCIENCE DIRECT</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="https://via.placeholder.com/200x100/ffffff/092543?text=Garuda" alt="Garuda">
+                        <span>GARUDA</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BERITA -->
+    <section class="news-section">
+        <div class="container">
+            
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-thumbnail">
+                        <img src="https://via.placeholder.com/400x250" alt="Cover Berita 1">
+                        <span class="news-badge visual-abstract">VISUAL ABSTRACT</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="author-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <h3 class="news-title">Is It Too Difficult for Students to Learn English? : Students' Habits in Using Extensive Listening & Viewing</h3>
+                        <p class="news-excerpt">Infografis ini menyoroti bagaimana kebiasaan belajar sehari-hari dapat membantu meningkatkan kemampuan berbicara bahasa Inggris. Penelitian yang dilakukan oleh Puthut Ardianto dan Andika Fitrah Nurcahya dari...</p>
+                        <a href="#" class="read-more-btn">READ MORE »</a>
+                    </div>
+                    <div class="news-footer">
+                        <span class="news-date">May 20, 2026</span>
+                        <span class="news-time">09:00</span>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-thumbnail">
+                        <img src="https://via.placeholder.com/400x250" alt="Cover Berita 2">
+                        <span class="news-badge artikel">ARTIKEL</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="author-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <h3 class="news-title">Hadapi Disrupsi Geopolitik, Perpustakaan ITSB Gelar Webinar tentang Financial Resilience dan Mental Well-being</h3>
+                        <p class="news-excerpt">Hari Keluarga – Perpustakaan Institut Teknologi Sains Bandung (ITSB) menyelenggarakan webinar Hari Keluarga 2026 bertema "Financial Resilience & Mental Well-being di Era Disrupsi Geopolitik" pada Jumat,...</p>
+                        <a href="#" class="read-more-btn">READ MORE »</a>
+                    </div>
+                    <div class="news-footer">
+                        <span class="news-date">May 16, 2026</span>
+                        <span class="news-time">10:13</span>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-thumbnail">
+                        <img src="https://via.placeholder.com/400x250" alt="Cover Berita 3">
+                        <span class="news-badge berita">BERITA</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="author-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <h3 class="news-title">Tingkatkan Dampak Penelitian, IQRA #21 ITSB Bahas Visual Abstract dan Konten Digital</h3>
+                        <p class="news-excerpt">Perpustakaan ITSB kembali menyelenggarakan webinar literasi informasi melalui program IQRA #21 dengan tema "From Reading to Visual: Mengubah Literatur jadi Konten yang...</p>
+                        <a href="#" class="read-more-btn">READ MORE »</a>
+                    </div>
+                    <div class="news-footer">
+                        <span class="news-date">May 6, 2026</span>
+                        <span class="news-time">14:08</span>
+                    </div>
+                </article>
+            </div>
+
+            <div class="load-more-container">
+                <button class="btn-load-more">Load More</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VERSI 2 E-LIBRARY PERPUSTAKAAN ITSB -->
+    <section class="elibrary-app-section">
+        <div class="app-background-overlay"></div>
+        
+        <div class="container elibrary-app-container">
+            
+            <div class="app-text-content">
+                <span class="app-tagline">Mobile Application</span>
+                <h2>Perpustakaan Dalam Genggaman</h2>
+                <p>Akses ribuan koleksi e-book, jurnal digital, dan fitur sirkulasi mandiri langsung dari smartphone Anda. Membaca dan belajar jadi lebih mudah di mana saja dan kapan saja.</p>
+                
+                <div class="app-download-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=id.kubuku.kbk1134661" class="btn-app-store" title="Download di Google Play Store">
+                        <i class="fa-brands fa-google-play"></i>
+                        <div class="btn-label-wrapper">
+                            <small>GET IT ON</small>
+                            <span>Google Play</span>
+                        </div>
+                    </a>
+                    <a href="https://apps.apple.com/id/app/e-library-itsb/id6572287440" class="btn-app-store app-apple" title="Download di App Store">
+                        <i class="fa-brands fa-apple"></i>
+                        <div class="btn-label-wrapper">
+                            <small>Download on the</small>
+                            <span>App Store</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="app-visual-mockup">
+                <div class="mockup-phone-wrapper">
+                    <img src="apps.jpeg" alt="E-Library Mobile App Screen" class="phone-screen-img">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ PERPUSTAKAAN ITSB -->
+     <section class="faq-section">
+        <div class="container">
+            <div class="faq-header">
+                <h2>Frequently Asked Questions (FAQ)</h2>
+                <div class="faq-wave-decorator">
+                    <svg viewBox="0 0 100 20" width="80" height="15">
+                        <path d="M0,10 Q12.5,0 25,10 T50,10 T75,10 T100,10" fill="none" stroke="#801d1d" stroke-width="3"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-column">
+                    <details class="faq-item">
+                        <summary class="faq-question">Bagaimana prosedur bebas pustaka?</summary>
+                        <div class="faq-answer">
+                            <p>Prosedur bebas pustaka dapat diakses melalui menu <strong>Download</strong> lalu pilih <a href="#" class="faq-link">Panduan Perpustakaan ITSB</a></p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Berapa denda keterlambatan pengembalian buku?</summary>
+                        <div class="faq-answer">
+                            <p>Denda keterlambatan dihitung per hari kerja sesuai tarif peraturan akademik yang berlaku untuk tiap eksemplar buku.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Berapa lama waktu peminjaman buku?</summary>
+                        <div class="faq-answer">
+                            <p>Durasi standar peminjaman buku sirkulasi untuk mahasiswa adalah 7 hingga 14 hari tergantung rumpun koleksi.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Bagaimana cara memperpanjang peminjaman buku?</summary>
+                        <div class="faq-answer">
+                            <p>Perpanjangan dapat dilakukan mandiri secara daring melalui area login akun sirkulasi sebelum masa pinjam berakhir.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Bagaimana cara mendaftar pelatihan literasi informasi?</summary>
+                        <div class="faq-answer">
+                            <p>Silakan mendaftar secara periodik lewat formulir tautan yang disediakan di beranda pengumuman utama situs.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="faq-column">
+                    <details class="faq-item">
+                        <summary class="faq-question">Bagaimana cara akses full text skripsi?</summary>
+                        <div class="faq-answer">
+                            <p>Akses teks lengkap skripsi/tugas akhir dibatasi menggunakan login akun lokal institusi via jaringan repositori internal.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Apa username password repository dan etd?</summary>
+                        <div class="faq-answer">
+                            <p>Gunakan kredensial akun portal mahasiswa tunggal terintegrasi (SSO) aktif Anda.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Bagaimana cara akses database journal dari luar ITSB?</summary>
+                        <div class="faq-answer">
+                            <p>Akses luar kampus wajib memanfaatkan konfigurasi koneksi jaringan proksi (Proxy) atau akun akses jarak jauh spesifik.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Apakah Perpustakaan ITSB terbuka untuk umum?</summary>
+                        <div class="faq-answer">
+                            <p>Ya, menerima kunjungan umum/eksternal untuk referensi di tempat dengan mengikuti aturan registrasi tamu khusus.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Apakah masyarakat umum bisa pinjam buku?</summary>
+                        <div class="faq-answer">
+                            <p>Layanan sirkulasi peminjaman luar rumah hanya disediakan eksklusif bagi pemegang kartu anggota aktif civitas akademika.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER MODERN -->
+    <footer class="modern-footer">
+        <div class="container">
+            
+            <div class="footer-unified-card">
+                
+                <div class="footer-inner-column">
+                    <div class="footer-brand">
+                        <img src="Logo ITSB Putih.png" alt="Logo ITSB" class="footer-logo-img">
+                        <div class="brand-text-wrapper">
+                            <h3>Perpustakaan ITSB</h3>
+                            <span>"Your Future Starts Here"</span>
+                        </div>
+                    </div>
+
+                    <div class="interactive-contact-list">
+                        <div class="clickable-info-item" onclick="activateFooterItem(this)">
+                            <div class="info-icon"><i class="fa-solid fa-id-card"></i></div>
+                            <div class="info-text">
+                                <label>NPP</label>
+                                <p>3216202F0000001</p>
+                            </div>
+                        </div>
+
+                        <div class="clickable-info-item" onclick="activateFooterItem(this)">
+                            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="info-text">
+                                <label>Email</label>
+                                <p>perpustakaan@itsb.ac.id</p>
+                            </div>
+                        </div>
+
+                        <div class="clickable-info-item" onclick="activateFooterItem(this)">
+                            <div class="info-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div class="info-text">
+                                <label>WhatsApp</label>
+                                <p>0882-9735-2210</p>
+                            </div>
+                        </div>
+
+                        <div class="clickable-info-item" onclick="activateFooterItem(this)">
+                            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="info-text">
+                                <label>Alamat</label>
+                                <p>Kota Deltamas Lot-A1 CBD, Jl. Ganesha Boulevard No.1, Pasirranji, Kec. Cikarang Pusat, Kabupaten Bekasi, Jawa Barat 17530</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-inner-column">
+                    <div class="column-header-title">
+                        <i class="fa-solid fa-clock header-icon yellow-icon"></i>
+                        <h3>Jam Pelayanan</h3>
+                    </div>
+
+                    <div class="hours-schedule-box">
+                        <div class="clickable-info-item" onclick="activateFooterItem(this)">
+                            <div class="info-icon"><i class="fa-solid fa-calendar-days yellow-icon"></i></div>
+                            <div class="info-text schedule-flex">
+                                <label class="day-label">Senin - Kamis</label>
+                                <span class="time-badge">08.00 - 17.00 WIB</span>
+                            </div>
+                        </div>
+
+                        <div class="clickable-info-item" onclick="activateFooterItem(this)">
+                            <div class="info-icon"><i class="fa-solid fa-calendar-day yellow-icon"></i></div>
+                            <div class="info-text schedule-flex">
+                                <label class="day-label">Jumat</label>
+                                <span class="time-badge">08.00 - 17.00 WIB</span>
+                            </div>
+                        </div>
+
+                        <div class="clickable-info-item holiday-item" onclick="activateFooterItem(this)">
+                            <div class="info-icon"><i class="fa-solid fa-ban red-icon"></i></div>
+                            <div class="info-text schedule-flex">
+                                <label class="day-label">Sabtu, Minggu & Tgl Merah</label>
+                                <span class="status-badge">Libur</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column-header-title" style="margin-top: 35px;">
+                        <i class="fa-solid fa-share-nodes header-icon pink-icon"></i>
+                        <h3>Sosial Media</h3>
+                    </div>
+
+                    <div class="social-media-buttons-grid">
+                        <a href="https://www.tiktok.com/@perpustakaanitsb" class="social-btn"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                        <a href="https://www.instagram.com/perpustakaan_itsb/" class="social-btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="https://youtube.com/@perpustakaanitsb?si=rYmS7gt81ZUkHq2L" class="social-btn"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                        <a href="https://www.facebook.com/perpustakaanitsb" class="social-btn"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                    </div>
+                </div>
+
+                <div class="footer-inner-column">
+                    <div class="column-header-title">
+                        <i class="fa-solid fa-layer-group header-icon green-icon"></i>
+                        <h3>Perpustakaan Fakultas</h3>
+                    </div>
+
+                    <div class="faculty-links-list">
+                        <div class="faculty-item" onclick="activateFooterItem(this)">
+                            <span>Pusat Informasi Ilmiah Fakultas Teknik</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <div class="faculty-item" onclick="activateFooterItem(this)">
+                            <span>Perpustakaan Pascasarjana</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <div class="faculty-item" onclick="activateFooterItem(this)">
+                            <span>Perpustakaan Vokasi</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <div class="faculty-item" onclick="activateFooterItem(this)">
+                            <span>Perpustakaan Utama Kampus</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div> </div>
+
+        <div class="footer-bottom-copyright">
+            <p>&copy; 2026 Perpustakaan Institut Teknologi Sains Bandung. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- MENU AKSESIBILITAS-->
+    <div class="accessibility-wrapper">
+        <button class="accessibility-trigger-btn" id="accessBtn" title="Menu Aksesibilitas">
+            <i class="fa-solid fa-universal-access"></i>
+        </button>
+
+        <div class="accessibility-panel" id="accessPanel">
+            <div class="panel-header">
+                <h3>Menu Aksesibilitas</h3>
+                <button class="close-panel-btn" id="closeAccessBtn">&times;</button>
+            </div>
+            <div class="panel-body">
+                
+                <div class="access-options-grid">
+                    <div class="access-option-card" onclick="handleAccess('text-large')">
+                        <div class="access-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        <h4>Teks Lebih Besar</h4>
+                    </div>
+
+                    <div class="access-option-card" onclick="handleAccess('text-small')">
+                        <div class="access-icon"><i class="fa-solid fa-magnifying-glass-minus"></i></div>
+                        <h4>Teks Lebih Kecil</h4>
+                    </div>
+
+                    <div class="access-option-card" onclick="handleAccess('grayscale')">
+                        <div class="access-icon"><i class="fa-solid fa-droplet-slash"></i></div>
+                        <h4>Skala Abu-abu</h4>
+                    </div>
+
+                    <div class="access-option-card" onclick="handleAccess('high-contrast')">
+                        <div class="access-icon"><i class="fa-solid fa-circle-half-stroke"></i></div>
+                        <h4>Menambah Kontras</h4>
+                    </div>
+
+                    <div class="access-option-card" onclick="handleAccess('low-contrast')">
+                        <div class="access-icon"><i class="fa-solid fa-circle"></i></div>
+                        <h4>Mengurangi Kontras</h4>
+                    </div>
+
+                    <div class="access-option-card" onclick="handleAccess('light-bg')">
+                        <div class="access-icon"><i class="fa-solid fa-sun"></i></div>
+                        <h4>Light Background</h4>
+                    </div>
+
+                    <div class="access-option-card" onclick="handleAccess('underline-links')">
+                        <div class="access-icon"><i class="fa-solid fa-underline"></i></div>
+                        <h4>Link Garis Bawah</h4>
+                    </div>
+
+                    <div class="access-option-card" onclick="handleAccess('readable-font')">
+                        <div class="access-icon"><i class="fa-solid fa-font"></i></div>
+                        <h4>Font Dapat Dibaca</h4>
+                    </div>
+                </div>
+
+                <button class="btn-reset-access" onclick="resetAccessibility()">Kembalikan Pengaturan Dasar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- IKON WHATSAPP-->
+     <a href="https://wa.me/6288297352210?text=Halo%20Perpustakaan%2C%20saya%20ingin%20bertanya%20mengenai..." 
+       class="whatsapp-floating-btn" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       title="Hubungi Kami via WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="wa-tooltip">Tanya Pustakawan</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
